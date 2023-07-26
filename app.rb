@@ -10,6 +10,10 @@ def generate_rap_name(name, last_purchase)
   "#{adjective} #{last_purchase.capitalize}"
 end
 
+get "/navbar" do
+  erb :navbar
+end
+
 get '/' do
   erb :form
 end
