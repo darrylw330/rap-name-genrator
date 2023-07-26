@@ -1,8 +1,9 @@
 require "sinatra"
 require "sinatra/reloader"
+# require "faker"
 
 def generate_rap_name(name, last_purchase)
-  adjectives = ['Lil', 'Big', 'Young', 'Savage', 'Crazy', 'Fresh', 'King', 'Queen', 'G', 'Baby', 'Super', 'Red', 'Blue', 'Black', 'White', 'Wavy', 'Wild', 'Lazy', 'Hazy', 'French', 'Spicy', 'Purple', 'Pink', 'Yellow', 'Loud', 'Heavy', 'Bad', 'Gentle', 'Soft']
+  adjectives = ['Lil', 'Big', 'Young', 'Old', 'Savage', 'Crazy', 'Fresh', 'King', 'Queen', 'G', 'OG', 'Baby', 'Super', 'Red', 'Blue', 'Black', 'White', 'Wavy', 'Wild', 'Lazy', 'Hazy', 'French', 'Spicy', 'Purple', 'Pink', 'Yellow', 'Loud', 'Heavy', 'Bad', 'Gentle', 'Soft', 'Juicy', 'Trill', 'Dirty', 'Hot', 'Shady', 'Slim', 'The']
 
   adjective = adjectives.sample
 
@@ -17,5 +18,5 @@ post '/' do
   name = params[:name]
   last_purchase = params[:last_purchase]
   rap_name = generate_rap_name(name, last_purchase)
-  "Your rap name is #{name} aka: #{rap_name}"
+  "Hey, #{name} your new rap name is '#{rap_name}'. Enjoy!"
 end
