@@ -19,8 +19,9 @@ get '/' do
 end
 
 post '/' do
-  name = params[:name]
+  @name = params[:name]
   last_purchase = params[:last_purchase]
-  rap_name = generate_rap_name(name, last_purchase)
-  "Hey, #{name} your new rap name is '#{rap_name}'. Enjoy!"
+  @rap_name = generate_rap_name(@name, last_purchase)
+  "Hey! #{@name} your new rap name is '#{@rap_name}'. Enjoy!"
+  erb :result, layout: :layout
 end
