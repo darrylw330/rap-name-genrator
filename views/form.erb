@@ -4,15 +4,29 @@
   <title>Rap Name Generator</title>
 </head>
 <body>
-  <h1>Get Your Rap Name</h1>
-  <form action="/" method="post">
-    <label for="name">Enter your name:</label>
-    <input type="text" name="name" required>
-    <br>
-    <label for="last_purchase">Enter the last thing you bought:</label>
-    <input type="text" name="last_purchase" required>
-    <br>
-    <input type="submit" value="Generate Rap Name">
-  </form>
+  <div class="container">
+    <h1>Get Your Rap Name</h1>
+    <form action="/" method="post">
+      <label for="name">Enter your name:</label>
+      <input type="text" name="name" required>
+      <br>
+      <label for="last_purchase">Enter the last thing you bought:</label>
+      <input type="text" name="last_purchase" required>
+      <br>
+      <input type="submit" value="Generate Rap Name">
+    </form>
+
+    <!-- Loading bar will be hidden by default -->
+    <div id="loading-bar" class="spinner-border" role="status" style="display: none;">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+
+  <!-- The script to show the loading bar during form submission -->
+  <script>
+    document.querySelector('form').addEventListener('submit', function () {
+      document.getElementById('loading-bar').style.display = 'block';
+    });
+  </script>
 </body>
 </html>
