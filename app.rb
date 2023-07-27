@@ -1,10 +1,12 @@
 require "sinatra"
 require "sinatra/reloader"
-require "faker" # Include the 'faker' gem
+require "faker"
 
 def generate_rap_name(name, last_purchase)
-  adjective = Faker::Hipster.word.capitalize # Use Faker to generate a random adjective
-  "#{adjective} #{last_purchase.capitalize}"
+  adjective_one = ['Lil', 'Big', 'Young', 'Old', 'Savage', 'Crazy', 'Fresh', 'King', 'Queen', 'G', 'OG', 'Baby', 'Super', 'Red', 'Blue', 'Black', 'White', 'Wavy', 'Wild', 'Lazy', 'Hazy', 'French', 'Spicy', 'Purple', 'Pink', 'Yellow', 'Loud', 'Heavy', 'Bad', 'Gentle', 'Soft', 'Juicy', 'Trill', 'Dirty', 'Hot', 'Shady', 'Slim', 'The', 'Tiny', 'Cheesy', 'Silky', 'Happy', 'Sad', 'Mad', 'Prince', 'Princess']
+  adjective_one = adjective_one.sample
+  adjective = Faker::Hipster.word.capitalize
+  "#{adjective_one} #{adjective} #{last_purchase.capitalize}"
 end
 
 get "/navbar" do
